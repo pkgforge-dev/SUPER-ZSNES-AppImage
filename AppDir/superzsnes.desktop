@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=SUPER ZSNES
+Comment=SNES Emulator
+Exec=SUPERZSNES
+Icon=superzsnes
+StartupWMClass=SUPERZSNES
+Terminal=false
+Categories=Game;Emulator
