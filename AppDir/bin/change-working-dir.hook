@@ -1,0 +1,4 @@
+#!/bin/sh
+dir=$CONFIGDIR/unity3d/ZEMU Software Inc_/SUPERZSNES
+mkdir -p "$dir"
+cd "$dir"
