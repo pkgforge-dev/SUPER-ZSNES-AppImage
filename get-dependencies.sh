@@ -6,21 +6,16 @@ ARCH=$(uname -m)
 
 echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
-# pacman -Syu --noconfirm PACKAGESHERE
+#pacman -Syu --noconfirm
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
-get-debloated-pkgs --add-common --prefer-nano
+get-debloated-pkgs --add-common --prefer-nano libdecor-mini
 
-# Comment this out if you need an AUR package
-#make-aur-package PACKAGENAME
-
-# If the application needs to be manually built that has to be done down here
-
-# if you also have to make nightly releases check for DEVEL_RELEASE = 1
-#
-# if [ "${DEVEL_RELEASE-}" = 1 ]; then
-# 	nightly build steps
-# else
-# 	regular build steps
-# fi
+echo "Getting app..."
+echo "---------------------------------------------------------------"
+mkdir -p ./AppDir/bin
+wget https://zsnes.com/files/SuperZSNES_v0.300.tar.gz
+tar -xvf SuperZSNES*.tar.gz -C ./AppDir/bin
+rm -f ./*.tar.gz ./AppDir/bin/libdecor*.so*
+mv -v ./AppDir/bin/UnityPlayer.so /usr/lib
