@@ -3,7 +3,7 @@
 set -eu
 
 ARCH=$(uname -m)
-VERSION=0.220
+VERSION=0.230
 export ARCH VERSION
 export OUTPATH=./dist
 export ADD_HOOKS="self-updater.hook"
